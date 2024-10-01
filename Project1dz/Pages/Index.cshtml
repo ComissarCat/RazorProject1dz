@@ -1,0 +1,39 @@
+﻿@page
+@model Project1dz.Pages.IndexModel
+@{
+	Layout = "/Pages/Shared/_Layout.cshtml";
+	<div class="container">
+		<h5 class="h5">
+			Задание 1. Создайте и запустите базовое приложение ASP.NET Core, построенное на основании ASP.NET Razor Pages. В веб-странице выведите номер текущего дня в году.
+		</h5>
+		<p class="text-body">
+			@{
+				string d = DateTime.Now.DayOfYear.ToString();
+			}
+			Номер текущего дня в году: @d
+		</p>
+		<h5 class="h5">
+			Задание 2. Создайте и запустите базовое приложение ASP.NET Core, построенное на основании ASP.NET Razor Pages. В веб-странице в зависимости от случайного значения отображайте любую букву из английского алфавита.
+		</h5>
+		<p class="text-body">
+			@{
+				string alphabet = "abcdefghijklmnopqrstuvwxyz";
+				Random rand = new Random();
+				char randomSymbol = alphabet[rand.Next(alphabet.Length)];
+			}
+			Случайная буква английского алфавита: @randomSymbol
+		</p>
+		<h5 class="h5">
+			Задание 4. Добавьте к заданию 2 отображение списка ресторанов. Используйте возможности CSS для форматирования списка.
+		</h5>
+		@if (Model.Restaurants.Length > 0)
+		{
+			<ul>
+				@foreach (var r in Model.Restaurants)
+				{
+					<li class="text-success">@r</li>
+				}
+			</ul>
+		}
+	</div>
+}

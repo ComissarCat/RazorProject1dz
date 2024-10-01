@@ -1,0 +1,17 @@
+﻿@page
+@model Project1dz.Pages.CountriesModel
+@{
+	Layout = "/Pages/Shared/_Layout.cshtml";
+	<div class="container">
+	@if (Model.Countries.Length > 0)
+	{
+		<ul>
+			@foreach (var c in Model.Countries)
+			{
+				<li class="text-success">@c</li>
+			}
+		</ul>
+		<p class="text-body">вместе мы - Святая Русь!</p>
+	}
+	</div>
+}

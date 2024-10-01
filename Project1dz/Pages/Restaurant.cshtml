@@ -1,0 +1,20 @@
+﻿@page
+@model Project1dz.Pages.RestaurantModel
+@{
+	Layout = "/Pages/Shared/_Layout.cshtml";
+
+	<div class="container">
+		<h3 class="h3">Ресторан @Model.Name</h3>
+		<p class="text-body">Мы расположены по адресу: @Model.Address</p>
+		@if (Model.Menu.Length > 0)
+		{
+			<h5 class="h5">Меню:</h5>
+			<ul>
+				@foreach (var m in Model.Menu)
+				{
+					<li>@m</li>
+				}
+			</ul>
+		}
+	</div>
+}
